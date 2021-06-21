@@ -1,0 +1,69 @@
+ALGORITHME egaux (tab1,tab2)
+VAR 
+tab3=[];
+i,j,k,sum:integer;
+exist:boolean;
+BEGIN
+sum:=0;
+k:=0;
+for (i=0;i<tab1.length;i++)
+{
+    exist:=false;
+    j:=0;
+    REPEAT
+    {
+        if (tab1[i]==tab2[j])
+        {
+            exist:=true;            
+        }
+        else
+        {
+            j:=j+1;
+        }
+        END_IF
+    }
+    UNTIL((exist==true) || (j<=tab2.length))
+    if (exist==true)
+    {
+        tab3[k]:=tab1[i];
+        k:=k+1;
+    }
+    END_IF
+}
+END_FOR
+
+for (i=0;i<tab2.length;i++)
+{
+    exist:=false;
+    j:=0;
+    REPEAT
+    {
+        if (tab2[i]==tab1[j])
+        {
+            exist:=true;
+        }
+        else
+        {
+            j:=j+1;
+        }
+        END_IF
+    }
+    UNTIL((exist==true) || (j<=tab1.length))
+    if (exist==true)
+    {
+        tab3[k]:=tab2[i];
+        k:=k+1;
+    }
+    END_IF
+}
+END_FOR
+
+for(i=0;i<=tab3.length;i++)
+{
+    sum:=sum+tab3[i];
+}
+END_FOR
+
+whrite("la somme des éléments égaux dans les deux tableaux ext : " , sum);
+
+END
