@@ -1,0 +1,41 @@
+ALGORITHME Procedural_programming
+
+BEGIN
+
+Procedure scalar (VAR Produit : float ; vect1,vect2:array)
+
+var i : INTEGER;
+
+BEGIN
+produit:=0;
+for (i=0;i<=vect1.length;i++)
+{
+    produit:= produit + vect1(i)*vect2(i);
+}
+END_FOR
+
+Procedure orthogonal ()
+VAR produit : INTEGER;
+    vect1,vect2 : array;
+
+BEGIN
+write("donner le nombre des vecteurs");
+read(vect1);
+read(vect2);
+scalar(produit,vect1,vect2);
+
+IF(produit==0)THEN
+{
+    write("les deux vecteurs sont orthogonaux");
+}
+ELSE
+{
+    write("les vecteurs ne sont pas orthogonaux");
+}
+END_IF
+
+END.
+
+END.
+
+END.
