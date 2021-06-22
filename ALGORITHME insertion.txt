@@ -1,0 +1,28 @@
+ALGORITHME insertion
+VAR
+tab : [INTEGER];
+BEGIN
+Function insertion(int : INTEGER;tab : array)
+VAR j : INTEGER;
+    insert : BOOLEAN;
+BEGIN
+
+for (j = tab.length; j > 0 && tab[j-1] > int; j--)
+{
+    tab[j] = tab[j-1];
+    tab[j] = int;
+}
+END_FOR
+
+return(tab);
+END
+
+
+write("donner le premier entier à inserer");
+read(int);
+tab[0]:=int;
+write("donner un entier à inserer");
+read(int);
+tab:=insertion(int,tab);
+
+END.
